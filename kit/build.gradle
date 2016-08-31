@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'android-apt'
+version = "1.0.0"
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    testCompile 'junit:junit:4.12'
+    //rxjava retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.+'
+    compile 'com.squareup.retrofit2:retrofit-converters:2.+'
+    compile 'com.squareup.retrofit2:converter-gson:2.+'
+    compile 'com.google.code.gson:gson:2.+'
+    compile 'com.squareup.retrofit2:retrofit-adapters:2.+'
+    compile 'io.reactivex:rxjava:x.y.z'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile 'com.squareup.haha:haha:2.0.3'
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.+'
+    //leakcanary
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    //banner
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+
+}
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'Rx'                                //项目名字
+
+    publishedGroupId = 'com.jdd.kit'                //GroupId,这个要别人引用的时候会用到，
+    libraryName = 'kit'                         //这个是项目名字
+    artifact = 'kit'                                   //artifactId，这个也是别人引用的时候，会用到，它要和Module名字一样
+
+    libraryDescription = 'JDD的andoird kit'       //项目描述
+
+    siteUrl = 'https://github.com/JDDJJ/Rx'          //把项目分享到github后的项目地址
+    gitUrl = 'https://github.com/JDDJJ/Rx.git'       //分享后的项目git地址
+
+    libraryVersion = '1.0.0'
+    developerId = 'jddjj'                             //这个开发者id，自己写
+    developerName = 'JDD'                           //这个是开发者名字
+    developerEmail = '10124529686@qq.com'                    //开发者邮箱
+
+    licenseName = 'The Apache Software License, Version 2.0'     //开源协议
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

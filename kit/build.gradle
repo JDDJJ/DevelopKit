@@ -67,8 +67,8 @@ ext {
 
     libraryDescription = 'JDD的andoird kit'       //项目描述
 
-    siteUrl = 'https://github.com/JDDJJ/Rx'          //把项目分享到github后的项目地址
-    gitUrl = 'https://github.com/JDDJJ/Rx.git'       //分享后的项目git地址
+    siteUrl = 'https://github.com/JDDJJ/DevelopKit'          //把项目分享到github后的项目地址
+    gitUrl = 'https://github.com/JDDJJ/DevelopKit.git'       //分享后的项目git地址
 
     libraryVersion = '1.0.0'
     developerId = 'jddjj'                             //这个开发者id，自己写

@@ -7,4 +7,6 @@
     <string name="refreshing">refreshing...</string>
     <string name="refresh_done">refresh done</string>
     <string name="listview_header_last_time">last update：</string>
+    <string name="default_format">###,##0.00</string>
+    <string name="default_decimal_separator">\'</string>
 </resources>
